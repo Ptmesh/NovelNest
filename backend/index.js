@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import mongoose from "mongoose";
 import { MongoDBURL } from "./config.js";
@@ -8,6 +9,8 @@ const PORT = 3000;
 
 // Middleware Baghayla
 app.use(express.json());
+app.use(cors());
+console.log(typeof books);
 
 app.get("/", (req, res) => {
   res.send("This is the backend server!");

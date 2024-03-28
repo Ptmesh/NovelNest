@@ -10,9 +10,9 @@ Welcome to NovelNest, your cozy corner for managing all things books! NovelNest 
 
 ## Technologies Used 🚀
 
-- **Frontend:** Built with React.js for dynamic user interfaces, React Router for smooth navigation, and Tailwind CSS for stylish design.
+- **Frontend:** Built with React.js for dynamic user interfaces, React Router for smooth navigation, and Vanilla CSS for stylish design.
 - **Backend:** Powered by Node.js and Express.js, with MongoDB (using Mongoose) as the database for efficient data storage.
-- **Additional Tools:** Utilizes Axios for HTTP requests, React Icons for delightful icons, CORS for enabling cross-origin requests, and Vite for frontend builds.
+- **Additional Tools:** Utilizes Axios for HTTP requests, Font Awesome for delightful icons, CORS for enabling cross-origin requests, and Vite for frontend builds.
 
 ## Future Plans 🚀
 
