@@ -50,7 +50,7 @@ const Home = () => {
                     <td>{book.author}</td>
                     <td>{book.publishYear}</td>
                     <td>
-                      <Link to={`/books/details/${book._id}`}>
+                      <Link to={`/books/view/${book._id}`}>
                         <i className="fas fa-info"></i>
                       </Link>
                       <Link to={`/books/edit/${book._id}`}>
