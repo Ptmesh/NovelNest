@@ -10,7 +10,6 @@ const PORT = 3000;
 // Middleware Baghayla
 app.use(express.json());
 app.use(cors());
-console.log(typeof books);
 
 app.get("/", (req, res) => {
   res.send("This is the backend server!");
