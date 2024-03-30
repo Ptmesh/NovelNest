@@ -3,3 +3,51 @@
   padding: 0;
   margin: 0;
 }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  height: 5rem;
+  padding: 20px;
+  background-color: #ffb996;
+  align-items: center;
+}
+.navbar h2 {
+  color: #fcf5ed;
+}
+
+/* Buttons */
+
+.homebtn {
+  padding: 10px;
+  border: none;
+  background-color: #ffb996;
+  color: #fcf5ed;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.homebtn:hover {
+  cursor: pointer;
+}
+
+.addbtn,
+.btn,
+.infobtn,
+.editbtn,
+.deletebtn {
+  padding: 10px;
+  background-color: #ffb996;
+  border-radius: 25px;
+  color: #fcf5ed;
+  border: none;
+}
+
+/* Basic layout */
+.main-layout {
+  padding: 50px;
+}
+
+/* Home Page */
+.create {
+  margin: 30px 0;
+}

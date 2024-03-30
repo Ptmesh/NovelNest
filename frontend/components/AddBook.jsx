@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const AddBook = () => {
   const [title, setTitle] = useState("");
@@ -30,7 +31,8 @@ const AddBook = () => {
 
   return (
     <>
-      <div>
+      <Navbar />
+      <div className="main-layout">
         <h1>Add Book..</h1>
         {loading ? <h3>Please Wait</h3> : " "}
         <div className="add-form">

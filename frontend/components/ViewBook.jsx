@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import HomeBtn from "./HomeBtn";
+import Navbar from "./Navbar";
 
 const ViewBook = () => {
   const [book, setBook] = useState("");
@@ -22,7 +24,8 @@ const ViewBook = () => {
   }, []);
   return (
     <>
-      <div>
+      <Navbar />
+      <div className="main-layout">
         <h1>Showing Book</h1>
         {loading ? (
           <h2>Please Wait</h2>
@@ -52,6 +55,7 @@ const ViewBook = () => {
               <span>Updated At</span>
               <span>{new Date(book.updatedAt).toString()}</span>
             </div>
+            <HomeBtn />
           </div>
         )}
       </div>

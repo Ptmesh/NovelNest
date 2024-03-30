@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import HomeBtn from "./HomeBtn";
+import Navbar from "./Navbar";
 
 const EditBook = () => {
   const [author, setAuthor] = useState("");
@@ -30,45 +32,49 @@ const EditBook = () => {
       });
   };
   return (
-    <div className="edit">
-      <h2>Edit Book</h2>
-      {loading ? <h3>Please Wait</h3> : ""}
-      <div>
+    <>
+      <Navbar />
+      <div className="main-layout">
+        <h2>Edit Book</h2>
+        {loading ? <h3>Please Wait</h3> : ""}
         <div>
-          <span>Title</span>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => {
-              setTitle(e.target.value);
-            }}
-          />
+          <div>
+            <span>Title</span>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <span>Author</span>
+            <input
+              type="text"
+              value={author}
+              onChange={(e) => {
+                setAuthor(e.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <span>Publish Year</span>
+            <input
+              type="text"
+              value={publishYear}
+              onChange={(e) => {
+                setPublishYear(e.target.value);
+              }}
+            />
+          </div>
+          <button className="btn" onClick={handleEdit}>
+            Update Book <i class="fa-solid fa-pen"></i>
+          </button>
+          <HomeBtn />
         </div>
-        <div>
-          <span>Author</span>
-          <input
-            type="text"
-            value={author}
-            onChange={(e) => {
-              setAuthor(e.target.value);
-            }}
-          />
-        </div>
-        <div>
-          <span>Publish Year</span>
-          <input
-            type="text"
-            value={publishYear}
-            onChange={(e) => {
-              setPublishYear(e.target.value);
-            }}
-          />
-        </div>
-        <button className="btn" onClick={handleEdit}>
-          Update Book <i class="fa-solid fa-pen"></i>
-        </button>
       </div>
-    </div>
+    </>
   );
 };
 

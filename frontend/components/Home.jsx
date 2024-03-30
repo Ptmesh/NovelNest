@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import BookEntry from "./BookEntry";
+import Navbar from "./Navbar";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -22,48 +24,24 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      <Navbar />
+      <div className="main-layout">
         <h1>Home Book List</h1>
-        <div>
-          <Link to="/books/create">
+        <div className="create">
+          <Link to="/books/create" className="homebtn">
             <i className="fas fa-plus"></i>
           </Link>
         </div>
-        <div>
+
+        <div className="main-home-content">
           {loading ? (
             <h2>Loading...</h2>
           ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Publish Year</th>
-                  <th>Operations</th>
-                </tr>
-              </thead>
-              <tbody>
-                {books.map((book, index) => (
-                  <tr key={book._id}>
-                    <td>{index + 1}</td>
-                    <td>{book.title}</td>
-                    <td>{book.author}</td>
-                    <td>{book.publishYear}</td>
-                    <td>
-                      <Link to={`/books/view/${book._id}`}>
-                        <i className="fas fa-info"></i>
-                      </Link>
-                      <Link to={`/books/edit/${book._id}`}>
-                        <i className="fas fa-edit"></i>
-                      </Link>
-                      <Link to={`/books/delete/${book._id}`}>
-                        <i className="fas fa-trash"></i>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div>
+              {books.map((book) => (
+                <BookEntry key={book._id} book={book} />
+              ))}
+            </div>
           )}
         </div>
       </div>
